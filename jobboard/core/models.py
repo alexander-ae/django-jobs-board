@@ -18,3 +18,4 @@ class SlugModel(models.Model):
     def save(self, *args, **kwargs):
         self.slug = uuslug(self.name, instance=self)
         super(SlugModel, self).save(*args, **kwargs)
+

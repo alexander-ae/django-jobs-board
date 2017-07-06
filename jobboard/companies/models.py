@@ -24,3 +24,21 @@ class Company(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Organization(models.Model):
+    name = models.CharField(max_length=75)
+    url = models.URLField(verbose_name=_('URL'), blank=True)
+    location = models.CharField(max_length=120, blank=True)
+    coordinates = models.CharField(max_length=64, help_text='lat,lon', blank=True)
+    summary = models.CharField(max_length=128, blank=True)
+    size = models.CharField(_('Company size'), max_length=64, choices=constants.COMPANY_SIZE, blank=True)
+    employees = models.CharField(_('Quantity of employees'), max_length=64, choices=constants.COMPANY_EMPLOYEES,
+                                 blank=True)
+
+    class Meta:
+        verbose_name_plural = 'Organizations'
+        ordering = ['name']
+
+    def __str__(self):
+        return self.name
