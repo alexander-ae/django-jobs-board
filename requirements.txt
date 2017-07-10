@@ -1,5 +1,7 @@
 Django==1.11.3
+django-filter==1.0.4
 django-uuslug==1.1.8
+djangorestframework==3.6.3
 olefile==0.44
 Pillow==4.2.0
 psycopg2==2.7.1
