@@ -34,7 +34,7 @@ class UserProfile(models.Model):
 
 
 class UserEducation(models.Model):
-    userprofile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    userprofile = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='user_education')
     institution = models.ForeignKey(Institution, on_delete=models.CASCADE)
     title = models.CharField(_('Degree'), max_length=64)
     start_date = models.DateField(_('Start date'))

@@ -17,9 +17,13 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from core.routers import DefaultRouter
 from education.urls import router as router_education
+from companies.urls import router as router_companies
+from users.urls import router as router_user_profile
 
 router = DefaultRouter()
 router.extend(router_education)
+router.extend(router_companies)
+router.extend(router_user_profile)
 
 urlpatterns = [
     url(r'^api/', include(router.urls)),

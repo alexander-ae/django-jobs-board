@@ -1,9 +1,11 @@
 from django.db import models
 from django.utils.translation import ugettext as _
+from django.contrib.auth.models import User
 from . import constants
 
 
 class Company(models.Model):
+    owner = models.ForeignKey(User, blank=True, null=True)
     name = models.CharField(max_length=75)
     url = models.URLField(verbose_name=_('URL'), blank=True)
     location = models.CharField(max_length=120, blank=True)
